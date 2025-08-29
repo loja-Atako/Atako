@@ -4,18 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ATAKO - Loja Online</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     body {
       font-family: 'Roboto', sans-serif;
       margin: 0;
-      background: #000; /* Fundo preto */
-      color: white; /* Texto branco para contraste */
+      background: #000;
+      color: white;
       line-height: 1.6;
+      padding-top: 60px; /* Espaço para o menu fixo */
     }
     header {
-      background: #222; /* Um tom mais claro de preto para o header */
+      background: #222;
       color: white;
       padding: 40px 0;
       text-align: center;
@@ -32,10 +33,17 @@
       font-size: 18px;
       color: #ccc;
     }
+
+    /* Menu de Navegação */
     nav {
-      background: #ff6600;
+      background: #333; /* Fundo escuro para o menu */
       padding: 10px 0;
       text-align: center;
+      position: fixed; /* Fixa o menu no topo */
+      top: 0;
+      width: 100%;
+      z-index: 1000; /* Garante que o menu fique acima do conteúdo */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
     }
     nav a {
       color: white;
@@ -46,8 +54,9 @@
       text-transform: uppercase;
     }
     nav a:hover {
-      color: #333;
+      color: #ff6600; /* Cor laranja ao passar o mouse */
     }
+
     .container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -57,7 +66,7 @@
       margin: 0 auto;
     }
     .product-card {
-      background: #222; /* Cor de fundo dos cards */
+      background: #222;
       border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -76,18 +85,18 @@
       margin: 15px;
     }
     .product-card p {
-      color: #bbb; /* Texto em cinza claro */
+      color: #bbb;
       margin: 0 15px;
       font-size: 14px;
     }
     .product-card .price {
       font-size: 18px;
-      color: #ff6600;
+      color: #ff6600; /* Laranja nos preços */
       margin: 10px 15px;
     }
     .btn {
       display: block;
-      background: #ff6600;
+      background: #555; /* Cor de fundo mais neutra nos botões */
       color: white;
       text-align: center;
       padding: 12px;
@@ -98,8 +107,9 @@
       transition: background 0.3s;
     }
     .btn:hover {
-      background: #e65c00;
+      background: #777; /* Cor neutra ao passar o mouse */
     }
+
     footer {
       text-align: center;
       background: #222;
