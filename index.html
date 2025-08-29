@@ -51,10 +51,10 @@
     .container {
       display: flex;
       justify-content: space-between;
-      margin: 30px auto;
-      width: 90%;
-      max-width: 1200px;
-      gap: 30px;
+      margin: 50px auto;
+      width: 95%;
+      max-width: 1300px; /* Aumentando o tamanho máximo */
+      gap: 40px;
     }
     /* Lado esquerdo com as imagens */
     .image-gallery {
@@ -79,45 +79,14 @@
     .image-gallery img:hover {
       transform: scale(1.05);
     }
-    /* Lado direito com os ícones */
-    .icons {
+    /* Lado direito com os botões */
+    .store-buttons {
       flex: 0 0 28%;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
       gap: 30px;
-    }
-    .icons a {
-      font-size: 50px;
-      color: #fff;
-      background-color: #ff6600;
-      padding: 20px;
-      border-radius: 50%;
-      text-decoration: none;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-      transition: background-color 0.3s, transform 0.3s;
-    }
-    .icons a:hover {
-      background-color: #e65c00;
-      transform: translateY(-5px);
-    }
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #222;
-      color: white;
-      margin-top: 50px;
-    }
-    footer p {
-      font-size: 14px;
-    }
-    /* Botões de lojas */
-    .store-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
       align-items: center;
+      justify-content: flex-start;
     }
     .store-buttons a {
       background: #ff6600;
@@ -130,9 +99,20 @@
       width: 80%;
       text-align: center;
       transition: background-color 0.3s;
+      font-size: 16px;
     }
     .store-buttons a:hover {
       background: #e65c00;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #222;
+      color: white;
+      margin-top: 50px;
+    }
+    footer p {
+      font-size: 14px;
     }
   </style>
 </head>
@@ -166,21 +146,11 @@
       </a>
     </div>
 
-    <!-- Lado direito com os ícones e botões -->
-    <div class="icons">
-      <!-- Ícones para Shopee e Mercado Livre -->
-      <a href="https://shopee.com" target="_blank">
-        <i class="fab fa-shopify"></i> <!-- Ícone da Shopee -->
-      </a>
-      <a href="https://mercadolivre.com" target="_blank">
-        <i class="fab fa-mercadolivre"></i> <!-- Ícone do Mercado Livre -->
-      </a>
+    <!-- Lado direito com os botões -->
+    <div class="store-buttons">
+      <a href="https://shopee.com" target="_blank">Comprar na Shopee</a>
+      <a href="https://mercadolivre.com" target="_blank">Comprar no Mercado Livre</a>
     </div>
-  </div>
-
-  <div class="store-buttons">
-    <a href="https://shopee.com" target="_blank">Comprar na Shopee</a>
-    <a href="https://mercadolivre.com" target="_blank">Comprar no Mercado Livre</a>
   </div>
 
   <footer>
@@ -203,3 +173,4 @@
   </script>
 </body>
 </html>
+
