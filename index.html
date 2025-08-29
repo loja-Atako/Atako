@@ -60,54 +60,12 @@
       color: #25D366; /* Cor original do WhatsApp */
     }
 
-    /* Lado esquerdo - Botão de Produtos */
-    .product-btn {
-      position: fixed;
-      top: 50%;
-      left: 10px;
-      transform: translateY(-50%);
-      background-color: #333;
-      color: white;
-      padding: 15px;
-      border-radius: 8px;
-      font-size: 1.2rem;
-      cursor: pointer;
-      z-index: 1000;
+    .contact-icons .fa-store {
+      color: #FF6A00; /* Cor do Mercado Livre */
     }
 
-    .product-btn:hover {
-      background-color: #444;
-    }
-
-    /* Seção de produtos que aparece quando o botão de produtos é clicado */
-    .product-section {
-      position: fixed;
-      left: 10px;
-      top: 100px;
-      width: 200px;
-      background-color: #222;
-      padding: 20px;
-      border-radius: 8px;
-      display: none; /* Inicialmente escondido */
-    }
-
-    .product-section ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
-
-    .product-section li {
-      margin: 10px 0;
-    }
-
-    .product-section a {
-      text-decoration: none;
-      color: #ff6600;
-      font-size: 1.1rem;
-    }
-
-    .product-section a:hover {
-      color: white;
+    .contact-icons .fa-shopping-bag {
+      color: #FF7F00; /* Cor da Shopee */
     }
 
   </style>
@@ -126,27 +84,17 @@
       <a href="https://www.instagram.com/seu_usuario" target="_blank">
         <i class="fab fa-instagram"></i>
       </a>
+      <a href="https://www.mercadolivre.com.br" target="_blank">
+        <i class="fas fa-store"></i>
+      </a>
+      <a href="https://shopee.com.br" target="_blank">
+        <i class="fas fa-shopping-bag"></i>
+      </a>
     </div>
   </header>
 
-  <!-- Botão de Produtos no lado esquerdo -->
-  <div class="product-btn" onclick="toggleProducts()">
-    Produtos
-  </div>
-
-  <!-- Seção de Produtos -->
-  <div class="product-section" id="productSection">
-    <h3>Produtos</h3>
-    <ul>
-      <li><a href="#">Produto 1</a></li>
-      <li><a href="#">Produto 2</a></li>
-      <li><a href="#">Produto 3</a></li>
-      <li><a href="#">Produto 4</a></li>
-    </ul>
-  </div>
-
   <script>
-    // Função para alternar a visibilidade da seção de produtos
+    // Função para alternar a visibilidade da seção de produtos (se necessário)
     function toggleProducts() {
       const productSection = document.getElementById('productSection');
       if (productSection.style.display === 'none' || productSection.style.display === '') {
