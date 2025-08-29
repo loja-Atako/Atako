@@ -66,13 +66,13 @@
       color: #ff6600; /* Cor laranja ao passar o mouse */
     }
 
-    /* Botões de Contato no topo */
+    /* Botões de Contato no topo (fixos à direita) */
     .contact-buttons {
       position: fixed;
       top: 100px; /* Posiciona os botões logo abaixo do menu */
       right: 20px;
       display: flex;
-      flex-direction: row; /* Coloca os botões lado a lado */
+      flex-direction: column; /* Coloca os botões verticalmente */
       gap: 10px; /* Espaçamento entre os botões */
       z-index: 1000;
     }
@@ -198,7 +198,7 @@
     <a href="#produtos">Produtos</a>
   </nav>
 
-  <!-- Botões de Contato no topo -->
+  <!-- Botões de Contato no topo (fixos à direita) -->
   <div class="contact-buttons">
     <a href="https://www.instagram.com/seu_usuario" target="_blank">
       <button class="btn">Instagram</button>
