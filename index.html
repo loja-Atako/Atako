@@ -73,6 +73,8 @@
       border-radius: 8px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
+      max-height: 300px; /* Limita a altura das imagens */
+      object-fit: cover; /* Garante que as imagens não sejam distorcidas */
     }
     .image-gallery img:hover {
       transform: scale(1.05);
@@ -110,6 +112,28 @@
     footer p {
       font-size: 14px;
     }
+    /* Botões de lojas */
+    .store-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+    .store-buttons a {
+      background: #ff6600;
+      color: white;
+      padding: 15px 30px;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      border-radius: 5px;
+      width: 80%;
+      text-align: center;
+      transition: background-color 0.3s;
+    }
+    .store-buttons a:hover {
+      background: #e65c00;
+    }
   </style>
 </head>
 <body>
@@ -142,7 +166,7 @@
       </a>
     </div>
 
-    <!-- Lado direito com os ícones -->
+    <!-- Lado direito com os ícones e botões -->
     <div class="icons">
       <!-- Ícones para Shopee e Mercado Livre -->
       <a href="https://shopee.com" target="_blank">
@@ -152,6 +176,11 @@
         <i class="fab fa-mercadolivre"></i> <!-- Ícone do Mercado Livre -->
       </a>
     </div>
+  </div>
+
+  <div class="store-buttons">
+    <a href="https://shopee.com" target="_blank">Comprar na Shopee</a>
+    <a href="https://mercadolivre.com" target="_blank">Comprar no Mercado Livre</a>
   </div>
 
   <footer>
