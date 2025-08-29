@@ -3,260 +3,151 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ATAKO - Loja Online</title>
+  <title>ATAKO</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet"> <!-- Google Fonts -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Link para o Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome para ícones -->
   <style>
     /* Estilo Global */
     body {
-      font-family: 'Roboto', sans-serif;
       margin: 0;
-      background: #000;
+      background-color: #000;
       color: white;
-      line-height: 1.6;
-      padding-top: 60px; /* Espaço para o menu fixo */
+      font-family: 'Roboto', sans-serif;
+    }
+
+    /* Header - Nome do site centralizado */
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+      background-color: #000;
+      font-size: 3rem;
+      color: white;
+      font-family: 'Open Sans', sans-serif;
+      letter-spacing: 2px;
       position: relative;
     }
 
-    /* Header */
-    header {
-      background: #222;
-      color: white;
-      padding: 10px 0;
-      text-align: left;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      padding-left: 20px;
-    }
     header h1 {
       margin: 0;
-      font-size: 36px;
-      font-family: 'Open Sans', sans-serif;
-      letter-spacing: 2px;
-    }
-    header p {
-      margin-top: 5px;
-      font-size: 18px;
-      color: #ccc;
     }
 
-    /* Menu de Navegação */
-    nav {
-      background: #333;
-      padding: 5px 0;
-      text-align: center;
-      position: fixed;
-      top: 60px;
-      width: 100%;
-      z-index: 1000;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 20px;
-      font-size: 18px;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-    nav a:hover {
-      color: #ff6600; /* Cor laranja ao passar o mouse */
-    }
-
-    /* Botões de Contato no topo (fixos à direita) */
-    .contact-buttons {
-      position: fixed;
-      top: 100px; /* Posiciona os botões logo abaixo do menu */
+    /* Contato no topo direito com ícones */
+    .contact-icons {
+      position: absolute;
+      top: 20px;
       right: 20px;
       display: flex;
-      flex-direction: column; /* Coloca os botões verticalmente */
-      gap: 10px; /* Espaçamento entre os botões */
+      gap: 15px;
+    }
+
+    .contact-icons a {
+      color: white;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+
+    .contact-icons a:hover {
+      color: #ff6600;
+    }
+
+    /* Lado esquerdo - Botão de Produtos */
+    .product-btn {
+      position: fixed;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      background-color: #333;
+      color: white;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      cursor: pointer;
       z-index: 1000;
     }
 
-    .contact-buttons .btn {
-      width: 150px;
-      padding: 12px;
-      font-weight: bold;
-      border-radius: 5px;
-      background: #555;
-      color: white;
-      text-align: center;
-      transition: background 0.3s;
+    .product-btn:hover {
+      background-color: #444;
     }
 
-    .contact-buttons .btn:hover {
-      background: #777;
-    }
-
-    /* Container de Produtos */
-    .container {
-      display: block; /* Empilhar os produtos em uma única coluna */
-      gap: 20px;
-      padding: 30px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    /* Cards de Produtos */
-    .product-card {
-      background: #222;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-      width: 100%;
-      margin-bottom: 20px;
-    }
-    .product-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-    .product-card:hover {
-      transform: scale(1.05);
-    }
-    .product-card h3 {
-      font-size: 20px;
-      margin: 15px;
-    }
-    .product-card p {
-      color: #bbb;
-      margin: 0 15px;
-      font-size: 14px;
-    }
-    .product-card .price {
-      font-size: 18px;
-      color: #ff6600;
-      margin: 10px 15px;
-    }
-    .btn {
-      display: block;
-      background: #555;
-      color: white;
-      text-align: center;
-      padding: 12px;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 0 15px 15px;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-    .btn:hover {
-      background: #777;
-    }
-
-    /* Rodapé */
-    footer {
-      text-align: center;
-      background: #222;
-      color: white;
+    /* Seção de produtos que aparece quando o botão de produtos é clicado */
+    .product-section {
+      position: fixed;
+      left: 10px;
+      top: 100px;
+      width: 200px;
+      background-color: #222;
       padding: 20px;
-      margin-top: 50px;
-    }
-    footer p {
-      font-size: 14px;
+      border-radius: 8px;
+      display: none; /* Inicialmente escondido */
     }
 
-    /* Estilo para a aba de Contato */
-    #contact-section {
-      display: none;
-      text-align: center;
-      padding: 30px;
-      background: #ff6600;
-      margin-top: 20px;
-      border-radius: 8px;
+    .product-section ul {
+      list-style-type: none;
+      padding-left: 0;
     }
-    #contact-section a {
-      color: white;
-      text-decoration: none;
-      background: #222;
-      padding: 12px 25px;
-      font-weight: bold;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-      display: inline-block;
+
+    .product-section li {
       margin: 10px 0;
     }
-    #contact-section a:hover {
-      background-color: #e65c00;
+
+    .product-section a {
+      text-decoration: none;
+      color: #ff6600;
+      font-size: 1.1rem;
+    }
+
+    .product-section a:hover {
+      color: white;
     }
 
   </style>
 </head>
 <body>
+
+  <!-- Header com nome do site -->
   <header>
     <h1>ATAKO</h1>
-    <p>Moda e estilo para você</p>
+
+    <!-- Ícones de Contato no topo direito -->
+    <div class="contact-icons">
+      <a href="https://wa.me/55seunumerodetelefone" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="https://www.instagram.com/seu_usuario" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
   </header>
 
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#produtos">Produtos</a>
-  </nav>
-
-  <!-- Botões de Contato no topo (fixos à direita) -->
-  <div class="contact-buttons">
-    <a href="https://www.instagram.com/seu_usuario" target="_blank">
-      <button class="btn">Instagram</button>
-    </a>
-    <a href="https://wa.me/55seunumerodetelefone" target="_blank">
-      <button class="btn">WhatsApp</button>
-    </a>
+  <!-- Botão de Produtos no lado esquerdo -->
+  <div class="product-btn" onclick="toggleProducts()">
+    Produtos
   </div>
 
-  <div class="container" id="produtos">
-    <!-- Produto 1 -->
-    <div class="product-card">
-      <img src="https://via.placeholder.com/600x400" alt="Produto 1">
-      <h3>Moletom Preto</h3>
-      <p>Conforto e estilo para o dia a dia.</p>
-      <div class="price">R$ 129,90</div>
-      <a href="https://shopee.com" class="btn" target="_blank">Comprar na Shopee</a>
-    </div>
-    <!-- Produto 2 -->
-    <div class="product-card">
-      <img src="https://via.placeholder.com/600x400" alt="Produto 2">
-      <h3>Camiseta Básica</h3>
-      <p>Essencial para seu guarda-roupa.</p>
-      <div class="price">R$ 59,90</div>
-      <a href="https://mercadolivre.com" class="btn" target="_blank">Comprar no Mercado Livre</a>
-    </div>
-    <!-- Produto 3 -->
-    <div class="product-card">
-      <img src="https://via.placeholder.com/600x400" alt="Produto 3">
-      <h3>Cropped Estiloso</h3>
-      <p>Para quem quer se destacar.</p>
-      <div class="price">R$ 89,90</div>
-      <a href="https://shopee.com" class="btn" target="_blank">Comprar na Shopee</a>
-    </div>
-    <!-- Produto 4 -->
-    <div class="product-card">
-      <img src="https://via.placeholder.com/600x400" alt="Produto 4">
-      <h3>Calça Jogger</h3>
-      <p>Conforto e estilo em um só look.</p>
-      <div class="price">R$ 109,90</div>
-      <a href="https://mercadolivre.com" class="btn" target="_blank">Comprar no Mercado Livre</a>
-    </div>
+  <!-- Seção de Produtos -->
+  <div class="product-section" id="productSection">
+    <h3>Produtos</h3>
+    <ul>
+      <li><a href="#">Produto 1</a></li>
+      <li><a href="#">Produto 2</a></li>
+      <li><a href="#">Produto 3</a></li>
+      <li><a href="#">Produto 4</a></li>
+    </ul>
   </div>
-
-  <footer>
-    <p>© 2025 ATAKO - Todos os direitos reservados</p>
-  </footer>
 
   <script>
-    // Função para alternar a visibilidade da seção de Contato
-    function toggleContact() {
-      var contactSection = document.getElementById('contact-section');
-      if (contactSection.style.display === "none" || contactSection.style.display === "") {
-        contactSection.style.display = "block";
+    // Função para alternar a visibilidade da seção de produtos
+    function toggleProducts() {
+      const productSection = document.getElementById('productSection');
+      if (productSection.style.display === 'none' || productSection.style.display === '') {
+        productSection.style.display = 'block';
       } else {
-        contactSection.style.display = "none";
+        productSection.style.display = 'none';
       }
     }
   </script>
+
 </body>
 </html>
