@@ -7,31 +7,49 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Link para o Font Awesome -->
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       margin: 0;
-      background: #f0f0f0;
+      background: #f4f4f4;
       color: #333;
+      line-height: 1.6;
     }
     header {
       background: #111;
       color: white;
-      padding: 20px;
+      padding: 20px 0;
       text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
     header h1 {
       margin: 0;
-      font-size: 32px;
-      letter-spacing: 2px;
+      font-size: 36px;
+      font-family: 'Helvetica', sans-serif;
+      letter-spacing: 3px;
     }
     header p {
-      margin: 5px 0 0;
-      font-size: 16px;
+      margin-top: 5px;
+      font-size: 18px;
       color: #ccc;
+    }
+    nav {
+      background: #222;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #ff6600;
     }
     .container {
       width: 90%;
       max-width: 1200px;
-      margin: 20px auto;
+      margin: 30px auto;
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 20px;
@@ -39,63 +57,71 @@
     .produto {
       background: white;
       border-radius: 12px;
-      padding: 15px;
+      padding: 20px;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-      transition: transform 0.2s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
     }
     .produto:hover {
-      transform: scale(1.03);
+      transform: translateY(-5px);
     }
     .produto img {
       max-width: 100%;
       border-radius: 8px;
+      margin-bottom: 15px;
     }
     .produto h2 {
-      font-size: 18px;
-      margin: 10px 0;
+      font-size: 20px;
+      margin-bottom: 10px;
     }
     .produto p {
       font-size: 14px;
-      color: #555;
+      color: #777;
+      margin-bottom: 20px;
     }
     .btn {
       display: inline-block;
-      margin-top: 10px;
-      padding: 10px 15px;
+      padding: 12px 20px;
       background: #ff6600;
       color: white;
       text-decoration: none;
       border-radius: 5px;
       font-weight: bold;
-      transition: 0.3s;
+      transition: background 0.3s;
     }
     .btn:hover {
       background: #e65c00;
     }
     .social-icons {
       text-align: center;
-      margin-top: 20px;
+      margin-top: 40px;
     }
     .social-icons a {
-      margin: 0 10px;
+      margin: 0 20px;
       color: #E4405F;
-      font-size: 30px;
+      font-size: 35px;
       text-decoration: none;
+      transition: color 0.3s;
+    }
+    .social-icons a:hover {
+      color: #ff6600;
     }
     .tabs {
       display: flex;
       justify-content: center;
-      margin-top: 30px;
+      margin-top: 40px;
+      gap: 20px;
     }
     .tabs button {
       background: #333;
       color: white;
       border: none;
-      padding: 10px 20px;
+      padding: 12px 20px;
       cursor: pointer;
       margin: 0 10px;
       border-radius: 5px;
+      font-size: 16px;
+      transition: background 0.3s;
     }
     .tabs button:hover {
       background: #555;
@@ -103,6 +129,7 @@
     .tab-content {
       display: none;
       margin-top: 20px;
+      text-align: center;
     }
     .tab-content img, .tab-content video {
       max-width: 100%;
@@ -110,10 +137,13 @@
     }
     footer {
       text-align: center;
-      padding: 15px;
+      padding: 20px;
       background: #111;
       color: white;
-      margin-top: 30px;
+      margin-top: 40px;
+    }
+    footer p {
+      font-size: 14px;
     }
   </style>
 </head>
@@ -123,39 +153,10 @@
     <p>Sua loja online de confiança</p>
   </header>
 
-  <div class="container">
-    <!-- Produto 1 -->
-    <div class="produto">
-      <img src="https://via.placeholder.com/250" alt="Moletom Preto">
-      <h2>Moletom Preto Oversized</h2>
-      <p>Estilo urbano com conforto premium.</p>
-      <a class="btn" href="https://shopee.com" target="_blank">Comprar na Shopee</a>
-    </div>
-
-    <!-- Produto 2 -->
-    <div class="produto">
-      <img src="https://via.placeholder.com/250" alt="Camiseta Branca">
-      <h2>Camiseta Branca Básica</h2>
-      <p>Peça essencial para qualquer guarda-roupa.</p>
-      <a class="btn" href="https://mercadolivre.com" target="_blank">Comprar no Mercado Livre</a>
-    </div>
-
-    <!-- Produto 3 -->
-    <div class="produto">
-      <img src="https://via.placeholder.com/250" alt="Cropped Street">
-      <h2>Cropped Streetwear</h2>
-      <p>Design moderno e versátil.</p>
-      <a class="btn" href="https://shopee.com" target="_blank">Comprar na Shopee</a>
-    </div>
-
-    <!-- Produto 4 -->
-    <div class="produto">
-      <img src="https://via.placeholder.com/250" alt="Calça Jogger">
-      <h2>Calça Jogger Unissex</h2>
-      <p>Conforto e estilo para o dia a dia.</p>
-      <a class="btn" href="https://mercadolivre.com" target="_blank">Comprar no Mercado Livre</a>
-    </div>
-  </div>
+  <nav>
+    <a href="#fotos" onclick="openTab('fotos')">Fotos</a>
+    <a href="#videos" onclick="openTab('videos')">Vídeos</a>
+  </nav>
 
   <div class="social-icons">
     <a href="https://www.instagram.com/seu_usuario/" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -188,13 +189,11 @@
 
   <script>
     function openTab(tabName) {
-      // Esconde todas as abas
       var contents = document.querySelectorAll('.tab-content');
       contents.forEach(function(content) {
         content.style.display = 'none';
       });
 
-      // Exibe a aba escolhida
       var activeTab = document.getElementById(tabName);
       activeTab.style.display = 'block';
     }
