@@ -47,93 +47,50 @@
       color: #ff6600;
     }
     .container {
+      display: flex;
+      justify-content: space-between;
+      margin: 30px auto;
       width: 90%;
       max-width: 1200px;
-      margin: 30px auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px;
     }
-    .produto {
-      background: white;
-      border-radius: 12px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-    .produto:hover {
-      transform: translateY(-5px);
-    }
-    .produto img {
-      max-width: 100%;
-      border-radius: 8px;
-      margin-bottom: 15px;
-    }
-    .produto h2 {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-    .produto p {
-      font-size: 14px;
-      color: #777;
-      margin-bottom: 20px;
-    }
-    .btn {
-      display: inline-block;
-      padding: 12px 20px;
-      background: #ff6600;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-    .btn:hover {
-      background: #e65c00;
-    }
-    .social-icons {
-      text-align: center;
-      margin-top: 40px;
-    }
-    .social-icons a {
-      margin: 0 20px;
-      color: #E4405F;
-      font-size: 35px;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    .social-icons a:hover {
-      color: #ff6600;
-    }
-    .tabs {
+    /* Lado esquerdo com as imagens */
+    .image-gallery {
+      flex: 1;
       display: flex;
-      justify-content: center;
-      margin-top: 40px;
+      flex-direction: column;
       gap: 20px;
     }
-    .tabs button {
-      background: #333;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      cursor: pointer;
-      margin: 0 10px;
-      border-radius: 5px;
-      font-size: 16px;
-      transition: background 0.3s;
+    .image-gallery a {
+      display: block;
+      width: 100%;
     }
-    .tabs button:hover {
-      background: #555;
-    }
-    .tab-content {
-      display: none;
-      margin-top: 20px;
-      text-align: center;
-    }
-    .tab-content img, .tab-content video {
-      max-width: 100%;
+    .image-gallery img {
+      width: 100%;
+      height: auto;
       border-radius: 8px;
+      max-height: 250px; /* Limita a altura das imagens */
+      cursor: pointer;
+    }
+    /* Lado direito com os ícones */
+    .icons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      max-width: 200px;
+    }
+    .icons a {
+      font-size: 40px;
+      color: white;
+      background-color: #ff6600;
+      padding: 15px;
+      border-radius: 50%;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    .icons a:hover {
+      background-color: #e65c00;
     }
     footer {
       text-align: center;
@@ -158,29 +115,35 @@
     <a href="#videos" onclick="openTab('videos')">Vídeos</a>
   </nav>
 
-  <div class="social-icons">
-    <a href="https://www.instagram.com/atako_oficial?igsh=MTJlejdibnMxbzFveQ%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://mercadolivre.com" target="_blank"><i class="fab fa-mercadolivre"></i></a>
-    <a href="https://shopee.com" target="_blank"><i class="fab fa-shopify"></i></a>
-  </div>
+  <div class="container">
+    <!-- Lado esquerdo com as imagens -->
+    <div class="image-gallery">
+      <!-- Imagens para a Shopee -->
+      <a href="https://shopee.com" target="_blank">
+        <img src="https://via.placeholder.com/600x400" alt="Imagem Shopee 1">
+      </a>
+      <a href="https://shopee.com" target="_blank">
+        <img src="https://via.placeholder.com/600x400" alt="Imagem Shopee 2">
+      </a>
+      <!-- Imagens para o Mercado Livre -->
+      <a href="https://mercadolivre.com" target="_blank">
+        <img src="https://via.placeholder.com/600x400" alt="Imagem Mercado Livre 1">
+      </a>
+      <a href="https://mercadolivre.com" target="_blank">
+        <img src="https://via.placeholder.com/600x400" alt="Imagem Mercado Livre 2">
+      </a>
+    </div>
 
-  <div class="tabs">
-    <button onclick="openTab('fotos')">Fotos</button>
-    <button onclick="openTab('videos')">Vídeos</button>
-  </div>
-
-  <div class="tab-content" id="fotos">
-    <h3>Galeria de Fotos</h3>
-    <img src="https://via.placeholder.com/600x400" alt="Foto 1">
-    <img src="https://via.placeholder.com/600x400" alt="Foto 2">
-  </div>
-
-  <div class="tab-content" id="videos">
-    <h3>Galeria de Vídeos</h3>
-    <video width="600" controls>
-      <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
-      Seu navegador não suporta a tag de vídeo.
-    </video>
+    <!-- Lado direito com os ícones -->
+    <div class="icons">
+      <!-- Ícones para Shopee e Mercado Livre -->
+      <a href="https://shopee.com" target="_blank">
+        <i class="fab fa-shopify"></i> <!-- Ícone da Shopee -->
+      </a>
+      <a href="https://mercadolivre.com" target="_blank">
+        <i class="fab fa-mercadolivre"></i> <!-- Ícone do Mercado Livre -->
+      </a>
+    </div>
   </div>
 
   <footer>
