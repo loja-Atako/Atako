@@ -4,17 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ATAKO - Loja Online</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet"> <!-- Google Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Link para o Font Awesome -->
   <style>
+    /* Estilo Global */
     body {
       font-family: 'Roboto', sans-serif;
       margin: 0;
       background: #000;
       color: white;
       line-height: 1.6;
-      padding-top: 50px; /* Ajuste para o menu fixo */
+      padding-top: 60px; /* Espaço para o menu fixo */
     }
+
+    /* Header */
     header {
       background: #222;
       color: white;
@@ -39,6 +42,8 @@
       font-size: 18px;
       color: #ccc;
     }
+
+    /* Menu de Navegação */
     nav {
       background: #333;
       padding: 5px 0; /* Reduzir o padding para aproximar mais ao topo */
@@ -59,34 +64,36 @@
     nav a:hover {
       color: #ff6600; /* Cor laranja ao passar o mouse */
     }
+
+    /* Container de Produtos */
     .container {
-      display: flex; /* Alinha os produtos na horizontal */
-      justify-content: left; /* Alinha os produtos à esquerda */
+      display: block; /* Empilhar os produtos em uma única coluna */
       gap: 20px;
       padding: 30px;
       max-width: 1200px;
       margin: 0 auto;
-      flex-wrap: wrap; /* Permite que os produtos se ajustem para a próxima linha, se necessário */
     }
+
+    /* Cards de Produtos */
     .product-card {
       background: #222;
       border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       transition: transform 0.3s;
-      width: 250px; /* Largura reduzida para os cards de produto */
+      width: 100%; /* Card ocupa toda a largura disponível */
       margin-bottom: 20px; /* Espaçamento entre os produtos */
     }
     .product-card img {
       width: 100%;
-      height: 180px; /* Ajusta a altura da imagem */
+      height: 200px; /* Ajustar altura das imagens */
       object-fit: cover;
     }
     .product-card:hover {
       transform: scale(1.05);
     }
     .product-card h3 {
-      font-size: 18px;
+      font-size: 20px;
       margin: 15px;
     }
     .product-card p {
@@ -115,6 +122,7 @@
       background: #777; /* Cor neutra ao passar o mouse */
     }
 
+    /* Rodapé */
     footer {
       text-align: center;
       background: #222;
@@ -154,7 +162,7 @@
 </head>
 <body>
   <header>
-    <h1>ATAKO</h1>
+    <h1>ATAKO</h1> <!-- Nome da loja agora no topo, à esquerda -->
     <p>Moda e estilo para você</p>
   </header>
 
@@ -197,38 +205,29 @@
       <div class="price">R$ 109,90</div>
       <a href="https://mercadolivre.com" class="btn" target="_blank">Comprar no Mercado Livre</a>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
   </div>
+
+  <!-- Seção de Contato (oculta inicialmente) -->
+  <div id="contact-section">
+    <h3>Entre em Contato</h3>
+    <a href="https://www.instagram.com/seu_usuario" target="_blank">Siga-nos no Instagram</a>
+    <a href="https://wa.me/55seunumerodetelefone" target="_blank">Envie uma mensagem no WhatsApp</a>
+  </div>
+
   <footer>
     <p>© 2025 ATAKO - Todos os direitos reservados</p> <!-- Rodapé com a informação de direitos reservados -->
   </footer>
 
-
-
+  <script>
+    // Função para alternar a visibilidade da seção de Contato
+    function toggleContact() {
+      var contactSection = document.getElementById('contact-section');
+      if (contactSection.style.display === "none" || contactSection.style.display === "") {
+        contactSection.style.display = "block";
+      } else {
+        contactSection.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
