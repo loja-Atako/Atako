@@ -15,13 +15,14 @@
       color: white;
       line-height: 1.6;
       padding-top: 60px; /* Espaço para o menu fixo */
+      position: relative;
     }
 
     /* Header */
     header {
       background: #222;
       color: white;
-      padding: 10px 0; /* Reduzir o padding para mover mais para cima */
+      padding: 10px 0;
       text-align: left;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       position: fixed;
@@ -46,7 +47,7 @@
     /* Menu de Navegação */
     nav {
       background: #333;
-      padding: 5px 0; /* Reduzir o padding para aproximar mais ao topo */
+      padding: 5px 0;
       text-align: center;
       position: fixed;
       top: 60px;
@@ -81,12 +82,12 @@
       overflow: hidden;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       transition: transform 0.3s;
-      width: 100%; /* Card ocupa toda a largura disponível */
-      margin-bottom: 20px; /* Espaçamento entre os produtos */
+      width: 100%;
+      margin-bottom: 20px;
     }
     .product-card img {
       width: 100%;
-      height: 200px; /* Ajustar altura das imagens */
+      height: 200px;
       object-fit: cover;
     }
     .product-card:hover {
@@ -103,7 +104,7 @@
     }
     .product-card .price {
       font-size: 18px;
-      color: #ff6600; /* Laranja nos preços */
+      color: #ff6600;
       margin: 10px 15px;
     }
     .btn {
@@ -136,7 +137,7 @@
 
     /* Estilo para a aba de Contato */
     #contact-section {
-      display: none; /* Inicialmente escondido */
+      display: none;
       text-align: center;
       padding: 30px;
       background: #ff6600;
@@ -158,18 +159,39 @@
       background-color: #e65c00;
     }
 
+    /* Posicionamento do botão de Contato no canto direito */
+    .contact-buttons {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      z-index: 1000;
+    }
+
+    .contact-buttons .btn {
+      width: 150px;
+      margin-bottom: 10px;
+    }
+
+    /* Estilo dos botões de Instagram e WhatsApp */
+    .contact-buttons a {
+      text-decoration: none;
+    }
+
   </style>
 </head>
 <body>
   <header>
-    <h1>ATAKO</h1> <!-- Nome da loja agora no topo, à esquerda -->
+    <h1>ATAKO</h1>
     <p>Moda e estilo para você</p>
   </header>
 
   <nav>
     <a href="#home">Home</a>
     <a href="#produtos">Produtos</a>
-    <a href="javascript:void(0);" onclick="toggleContact()">Contato</a> <!-- Botão para abrir a aba de Contato -->
+    <a href="javascript:void(0);" onclick="toggleContact()">Contato</a>
   </nav>
 
   <div class="container" id="produtos">
@@ -207,15 +229,20 @@
     </div>
   </div>
 
-  <!-- Seção de Contato (oculta inicialmente) -->
-  <div id="contact-section">
-    <h3>Entre em Contato</h3>
-    <a href="https://www.instagram.com/seu_usuario" target="_blank">Siga-nos no Instagram</a>
-    <a href="https://wa.me/55seunumerodetelefone" target="_blank">Envie uma mensagem no WhatsApp</a>
+  <div class="contact-buttons">
+    <a href="https://www.instagram.com/seu_usuario" target="_blank">
+      <button class="btn">Instagram</button>
+    </a>
+    <a href="https://wa.me/55seunumerodetelefone" target="_blank">
+      <button class="btn">WhatsApp</button>
+    </a>
+    <a href="javascript:void(0);" onclick="toggleContact()">
+      <button class="btn">Contato</button>
+    </a>
   </div>
 
   <footer>
-    <p>© 2025 ATAKO - Todos os direitos reservados</p> <!-- Rodapé com a informação de direitos reservados -->
+    <p>© 2025 ATAKO - Todos os direitos reservados</p>
   </footer>
 
   <script>
